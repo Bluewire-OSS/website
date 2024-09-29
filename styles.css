@@ -22,7 +22,8 @@ body {
 }
 
 .navbar {
-    width: 964px; 
+    width: 100%;
+    max-width: 964px;
     height: 84px; 
     background-color: var(--navbar-bg-color);
     border: 1px solid var(--navbar-border-color);
@@ -43,11 +44,12 @@ body {
 
 .content-area {
     display: flex;
+    flex-direction: column; /* Stack content vertically on mobile */
 }
 
 .main-content {
     background-image: linear-gradient(to bottom, var(--main-content-gradient-start), var(--main-content-gradient-end));
-    height: 320px; 
+    height: 320px;
 }
 
 .main-content h3 {
@@ -73,7 +75,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 964px;
+    width: 100%;
+    max-width: 964px;
     height: 29px;
     position: fixed;
     bottom: 0;
@@ -103,11 +106,66 @@ footer a:hover {
 }
 
 .bluewire-logo {
-    margin-top: 36px;
+    margin-top: -160px;
     width: 150px;
     position: relative;
-    left: calc(50% - -320px); 
+    left: calc(50% - -380px); 
     transform: translateX(-50%);
     display: block;
     border-radius: 10px;
+}
+
+.warning {
+    font-size: 11px;
+    color: #666;
+    margin-left: calc(50vw - 466px);
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: 45px;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .navbar img {
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header {
+        margin-left: 0;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .tagline {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .content-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        font-size: 11px;
+        flex-direction: column;
+        text-align: center;
+        width: 300px;
+    }
+
+    .bluewire-logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .warning {
+        display: block !important;
+    }
 }
