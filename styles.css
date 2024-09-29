@@ -115,13 +115,6 @@ footer a:hover {
     border-radius: 10px;
 }
 
-.warning {
-    font-size: 11px;
-    color: #666;
-    margin-left: calc(50vw - 466px);
-    display: none;
-}
-
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -140,11 +133,13 @@ footer a:hover {
         margin-left: 0;
         text-align: center;
         font-size: 18px;
+        padding: 0 20px; 
     }
 
     .tagline {
         margin-left: 0;
         text-align: center;
+        padding: 0 20px;
     }
 
     .content-area {
@@ -161,11 +156,5 @@ footer a:hover {
 
     .bluewire-logo {
         display: none;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .warning {
-        display: block !important;
     }
 }
